@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+	"os"
+)
+
+func main() {
+	if len(os.args) < 2 {
+		fmt.Println("ERROR!")
+		return
+	}
+	numTimestoPrint, err := strconv.Atoi(os.args[1])
+	if err != nil {
+		fmt.Println("ERROR!")
+		return
+	}
+
+	if numTimestoPrint < 0 || numTimestoPrint > 10 {
+		fmt.Println("ERROR!")
+		return
+	}
+
+	for i := 0; i < numTimestoPrint; i++ {
+		fmt.Println("jolly-finch")
+	}
+}
